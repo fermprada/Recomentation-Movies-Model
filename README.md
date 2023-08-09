@@ -13,9 +13,11 @@ También es importante mencionar que la implementación del modelo se hace a tra
 Este proyecto de machine learning se encuentra en la intersección de las áreas de big data, aprendizaje automático y análisis de datos. En particular, usa técnicas de preprocesado de datos, modelado, evaluación y visualización de resultados, que son temas clave en estas áreas.
 
 
+A continuación una breve explicación paso a paso de lo que se hizo para llegar al producto final (Modelo de recomendación ML)
+
 PRIMERA PARTE: ETL
 
-En primera instancia extraemos extraemos los dataset para trabajar en ellos
+En primera instancia extraemos los dataset para trabajar en ellos, hacemos desanidado de diccionarios y listas, eliminamos columnas innecesarias 
 
 
 
