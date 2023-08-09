@@ -23,7 +23,7 @@ A continuación una breve explicación paso a paso de lo que se hizo para llegar
 ## PRIMERA PARTE: ETL
 
 
-En primera instancia extraemos los dataset para trabajar en ellos, hacemos desanidado de diccionarios y listas, eliminamos columnas innecesarias 
+En primera instancia extraemos los dataset para trabajar en ellos, hacemos desanidado de diccionarios y listas, algunas columnas con valores nulos se reemplazaron por 0 o fueron eliminados según se pidió, eliminamos columnas innecesarias 
 
 
 
