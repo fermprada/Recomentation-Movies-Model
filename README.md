@@ -1,5 +1,9 @@
 # Recomentation-Movies-Model
 
+
+## Introducción
+
+
 Este proyecto se enfoca en la creación de un modelo de recomendación de películas usando un dataset ya procesado y limpio. El modelo se entrenará y validará usando la metodología de prueba y entrenamiento por partes.
 
 
@@ -15,21 +19,25 @@ Este proyecto de machine learning se encuentra en la intersección de las áreas
 
 A continuación una breve explicación paso a paso de lo que se hizo para llegar al producto final (Modelo de recomendación ML)
 
-PRIMERA PARTE: ETL
+
+## PRIMERA PARTE: ETL
+
 
 En primera instancia extraemos los dataset para trabajar en ellos, hacemos desanidado de diccionarios y listas, eliminamos columnas innecesarias 
 
 
 
 
-SEGUNDA PARTE: API
+## SEGUNDA PARTE: API
 
 
 
-TERCERA PARTE: DEPLOY
+## TERCERA PARTE: DEPLOY
 
 
-CUARTA PARTE: EDA
+
+## CUARTA PARTE: EDA
 
 
-FINAL: ML MODEL
+
+## FINAL: ML MODEL
