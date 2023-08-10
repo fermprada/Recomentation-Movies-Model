@@ -27,13 +27,13 @@ Para el desarrollo de la API: Se propone disponibilizar los datos usando el fram
 
 Se hicieron las siguientes consultas:
 
----->idioma de la película ( Idioma: str ): Se ingresa un idioma, ejemplo: (en) y te devuelve la cantidad de películas producidas en ese idioma.
+---->idioma de la película (Idioma: str): Se ingresa un idioma, ejemplo: 'en' y te devuelve la cantidad de películas producidas en ese idioma.
 
 
----->duración de la película (Pelicula: str): Se ingresa una pelicula. Debe devolver la duracion y el año.
+---->duración de la película (Pelicula: str): Se ingresa una pelicula ejemplo 'Toy Story'. Debe devolver la duracion y el año.
 
 
----->franquicia( Franquicia: str ): Se ingresa la franquicia, retornando la cantidad de peliculas, ganancia total y promedio
+---->franquicia (Franquicia: str): Se ingresa la franquicia, retornando la cantidad de peliculas, ganancia total y promedio
 
 
 ---->pais( Pais: str ): Se ingresa un país (como están escritos en el dataset, no hay que traducirlos!), retornando la cantidad de peliculas producidas en el mismo.
