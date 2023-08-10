@@ -14,10 +14,10 @@ def read_root():
 
 
 data = pd.read_csv('df_f.csv')
-df = pd.read_csv('demo_movies.csv')
 
 
-baseline = df[['title','overview']]
+
+baseline = data[['title','overview']]
 baseline.dropna(inplace = True)
 tfidfvec = TfidfVectorizer(min_df = 2, max_df = 0.7, token_pattern = r'\b[a-zA-Z]\w+\b',stop_words = 'english')
 baseline_vec = tfidfvec.fit_transform(baseline['overview'])
