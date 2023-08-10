@@ -17,7 +17,7 @@ data = pd.read_csv('df_f.csv')
 df = pd.read_csv('demo_movies.csv')
 
 
-baseline = data[['title','overview']]
+baseline = df[['title','overview']]
 baseline.dropna(inplace = True)
 tfidfvec = TfidfVectorizer(min_df = 2, max_df = 0.7, token_pattern = r'\b[a-zA-Z]\w+\b',stop_words = 'english')
 baseline_vec = tfidfvec.fit_transform(baseline['overview'])
@@ -124,7 +124,7 @@ def recomendacion(titulo:str):
     
     pelicula = cos_sim_df.loc['titulo']
     similitud_ordenada = pelicula.sort_values(ascending = False)
-    respuesta = similitud_ordenada.head(10)
+    respuesta = similitud_ordenada.head(5)
 
     return {'lista recomendada': respuesta}
 
