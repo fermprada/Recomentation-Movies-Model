@@ -14,6 +14,9 @@ def read_root():
 
 
 data = pd.read_csv('df_f.csv')
+df = pd.read_csv('demo_movies.csv')
+
+
 baseline = data[['title','overview']]
 baseline.dropna(inplace = True)
 tfidfvec = TfidfVectorizer(min_df = 2, max_df = 0.7, token_pattern = r'\b[a-zA-Z]\w+\b',stop_words = 'english')
@@ -119,8 +122,6 @@ def get_director(nombre_director: str):
 @app.get('/recomendacion/{titulo}')
 def recomendacion(titulo:str):
     
-  
-
     pelicula = cos_sim_df.loc['titulo']
     similitud_ordenada = pelicula.sort_values(ascending = False)
     respuesta = similitud_ordenada.head(10)
