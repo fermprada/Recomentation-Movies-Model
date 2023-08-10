@@ -1,6 +1,8 @@
 import pandas as pd
 from typing import Union
-
+from sklearn.feature_extraction.text import TfidfVectorizer
+from scipy import spatial
+from sklearn.metrics.pairwise import cosine_similarity
 from fastapi import FastAPI
 
 app = FastAPI()
