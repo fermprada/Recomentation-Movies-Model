@@ -12,6 +12,14 @@ def read_root():
 
 
 data = pd.read_csv('df_f.csv')
+baseline = data[['title','overview']]
+baseline.dropna(inplace = True)
+tfidfvec = TfidfVectorizer(min_df = 2, max_df = 0.7, token_pattern = r'\b[a-zA-Z]\w+\b',stop_words = 'english')
+baseline_vec = tfidfvec.fit_transform(baseline['overview'])
+baseline_vec_df = pd.DataFrame(baseline_vec.toarray(),index = baseline['title'])
+baseline_vec_df = baseline_vec_df.astype('float16')
+vector_similitud_coseno = cosine_similarity(baseline_vec_df.values)
+cos_sim_df = pd.DataFrame(vector_similitud_coseno, index = baseline_vec_df.index, columns = baseline_vec_df.index)
 
 
 @app.get('/peliculas_idioma/{idioma}')
@@ -102,12 +110,18 @@ def get_director(nombre_director: str):
     'peliculas':respuesta, 'anio':respuesta,, 'retorno_pelicula':respuesta, 
     'budget_pelicula':respuesta, 'revenue_pelicula':respuesta}
 '''
-
-
-'''
 # ML
+
+'''Ingresas un nombre de pelicula y te recomienda las similares en una lista'''
+
 @app.get('/recomendacion/{titulo}')
 def recomendacion(titulo:str):
-    Ingresas un nombre de pelicula y te recomienda las similares en una lista
+    
+  
+
+    pelicula = cos_sim_df.loc['titulo']
+    similitud_ordenada = pelicula.sort_values(ascending = False)
+    respuesta = similitud_ordenada.head(10)
+
     return {'lista recomendada': respuesta}
-'''
+
