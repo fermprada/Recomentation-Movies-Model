@@ -36,7 +36,7 @@ Se hicieron las siguientes consultas:
 ---->franquicia (Franquicia: str): Se ingresa la franquicia, retornando la cantidad de peliculas, ganancia total y promedio
 
 
----->pais( Pais: str ): Se ingresa un país (como están escritos en el dataset, no hay que traducirlos!), retornando la cantidad de peliculas producidas en el mismo.
+---->pais( Pais: str ): Se ingresa un país 'United States of America', retornando la cantidad de peliculas producidas en el mismo.
 
 
 ---->productoras(Productora: str ): Se ingresa la productora, entregandote el revunue total y la cantidad de peliculas que realizo.
