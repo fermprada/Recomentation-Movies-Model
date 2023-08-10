@@ -17,13 +17,15 @@ A continuación una breve explicación paso a paso de lo que se hizo para llegar
 ## PRIMERA PARTE: ETL
 
 
-En primera instancia extraemos los dataset para trabajar en ellos, hacemos desanidado de diccionarios y listas, algunas columnas con valores nulos se reemplazaron por 0 o fueron eliminados según lo requerido, eliminamos columnas innecesarias 
+En primera instancia extraemos los dataset para trabajar en ellos, hacemos transformaciones como desanidado de diccionarios y listas, unas columnas con valores nulos se reemplazaron por 0 o fueron eliminadas, eliminamos columnas innecesarias y creamos algunas columnas según lo requerido.
 
 
 
 ## SEGUNDA PARTE: API
 
-Para hacer la API utilizaremos FastApi, se instaló Fastapi e
+Para hacer la API utilizaremos FastApi,
+
+
 
 ## TERCERA PARTE: DEPLOY
 
