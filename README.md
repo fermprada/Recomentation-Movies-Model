@@ -30,19 +30,19 @@ Se hicieron las siguientes consultas:
 ---->idioma de la película (Idioma: str): Se ingresa un idioma, ejemplo: 'en' y te devuelve la cantidad de películas producidas en ese idioma.
 
 
----->duración de la película (Pelicula: str): Se ingresa una pelicula ejemplo 'Toy Story'. Debe devolver la duracion y el año.
+---->duración de la película (Pelicula: str): Se ingresa una pelicula ejemplo: 'Toy Story'. Debe devolver la duracion y el año.
 
 
 ---->franquicia (Franquicia: str): Se ingresa la franquicia, retornando la cantidad de peliculas, ganancia total y promedio
 
 
----->pais( Pais: str ): Se ingresa un país 'United States of America', retornando la cantidad de peliculas producidas en el mismo.
+---->pais( Pais: str ): Se ingresa un país por ejemplo: 'United States of America', retornando la cantidad de peliculas producidas en el mismo.
 
 
 ---->productoras(Productora: str ): Se ingresa la productora, entregandote el revunue total y la cantidad de peliculas que realizo.
 
 
----->director de la película (nombre_director ): Se ingresa el nombre de un director que se encuentre dentro de un dataset debiendo devolver el éxito del mismo medido a través del retorno. Además, deberá devolver el nombre de cada película con la fecha de lanzamiento, retorno individual, costo y ganancia de la misma, en formato lista.
+---->director de la película (nombre_director ): Se ingresa el nombre de un director que se encuentre dentro de un dataset, por ejemplo: 'John' debiendo devolver el éxito del mismo medido a través del retorno. Además, deberá devolver el nombre de cada película con la fecha de lanzamiento, retorno individual, costo y ganancia de la misma, en formato lista.
 
 
 ## TERCERA PARTE: DEPLOY
