@@ -53,5 +53,3 @@ Se hicieron las siguientes consultas:
 
 En el analisis explotario pudimos obtener algunos datos bastante interesantes y pudimos observar relaciones entre columnas
 
-
-## ML MODEL
