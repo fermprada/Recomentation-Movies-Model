@@ -4,6 +4,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from scipy import spatial
 from sklearn.metrics.pairwise import cosine_similarity
 from fastapi import FastAPI
+import csv
 
 app = FastAPI()
 
