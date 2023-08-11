@@ -84,7 +84,7 @@ lanzamiento, retorno individual, costo y ganancia de la misma, en formato lista.
 
 @app.get('/get_director/{nombre_director}')
 def get_director(nombre_director: str):
-    series = df[df['director'] == nombre_director]
+    series = data[data['director'] == nombre_director]
     retorno = series['return'].sum()
     pe= {}
     pe['director'] = nombre_director
@@ -118,6 +118,23 @@ with open('baseline_vec_df.csv', 'r') as csvfile:
     for row in csvreader:
         data_vec.append(row)
 
+baseline = df['title','overview']
+baseline.dropna(inplace = True)
+tfidfvec = TfidfVectorizer(min_df = 2, max_df = 0.7, token_pattern = r'\b[a-zA-Z]\w+\b',stop_words = 'english')
+baseline_vec = tfidfvec.fit_transform(baseline['overview'])
+baseline_vec_df = pd.DataFrame(baseline_vec.toarray(),index = baseline['title'])
+vector_similitud_coseno = cosine_similarity(baseline_vec_df.values)
+cos_sim_df = pd.DataFrame(vector_similitud_coseno, index = baseline_vec_df.index, columns = baseline_vec_df.index)
+
+@app.get('/recomendacion/{title}')
+def recomendacion(title):
+
+    titulo_pelicula = cos_sim_df.loc['title']
+    similitud_ordenada = titulo_pelicula.sort_values(ascending = False)
+    similitud_ordenada.head(5)
+
+'''
+
 cosine = np.array(data_vec, dtype=np.float32)
 indices = pd.Series(df.index, index=df['title']).drop_duplicates().to_dict()
 
@@ -137,6 +154,6 @@ def recomendacion(title):
     sim_index = [i[0] for i in score]
     recommended_titles = df['title'].iloc[sim_index].tolist()
     return {"recommended_movies": recommended_titles}
-
+'''
 
   
