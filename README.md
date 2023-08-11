@@ -6,7 +6,7 @@
 
 Este proyecto se enfoca en la creación de un modelo de recomendación de películas usando un dataset ya procesado y limpio. 😄
 
-También es importante mencionar que la implementación del modelo se hace a través de una tecnología de código abierto, que permite que otras personas puedan reproducir y mejorar el modelo en el futuro. Por último, el modelo puede ser extendido a otros problemas de recomendación, como el de música o libros, ya que la metodología es muy generalizable. 😃
+Es importante mencionar que la implementación del modelo se hace a través de una tecnología de código abierto, que permite que otras personas puedan reproducir y mejorar el modelo en el futuro. Además, el modelo puede ser extendido a otros problemas de recomendación, como el de música o libros, ya que la metodología es muy generalizable. 😃
 
 Este proyecto de machine learning se encuentra en la intersección de las áreas de big data, aprendizaje automático y análisis de datos. En particular, usa técnicas de preprocesado de datos, modelado, evaluación y visualización de resultados, que son temas clave en estas áreas.
 
