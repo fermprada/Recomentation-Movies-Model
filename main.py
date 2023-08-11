@@ -29,14 +29,6 @@ async def peliculas_idioma(idioma: str):
 def peliculas_duracion( Pelicula: str ): Se ingresa una pelicula. Debe devolver la duracion y el año.
 Ejemplo de retorno: X . Duración: x. Año: xx
 '''
-'''
-@app.get('/peliculas_duracion/{pelicula}')
-async def peliculas_duracion(pelicula):
-    d = data[['runtime', 'release_year']][data['title'] == pelicula]
-    duracion = int(d['runtime'][1])
-    anio = int(d['release_year'][1])
-    return {'pelicula':pelicula, 'duracion':f'{duracion}min', 'anio':anio}
-'''
 
 @app.get('/duracion/{pelicula}')
 def peliculas_duracion(pelicula:str):
@@ -51,14 +43,13 @@ def franquicia( Franquicia: str ): Se ingresa la franquicia, retornando la canti
 ganancia total y promedio Ejemplo de retorno: La franquicia X posee X peliculas, una ganancia 
 total de x y una ganancia promedio de xx
 '''
-@app.get('/franquicia/{franquicia}')
-async def franquicia(franquicia: str):
-    collection = data[data['belongs_to_collection'] == franquicia]
+@app.get('/coleccion/{coleccion}')
+def franquicia(Franquicia:str):
+    collection = data[data['belongs_to_collection'] == Franquicia]
     numero = len(collection) 
-    ganacia = collection['revenue'].sum()
-    promedio = collection['revenue'].mean()
-    return {'franquicia':franquicia, 'cantidad':numero, 'ganancia_total':ganacia, 'ganancia_promedio':promedio}
-
+    ganancia = collection['revenue'].sum()
+    avg = collection['revenue'].mean()
+    return f'La franquicia {Franquicia} tiene {numero} peliculas, una ganancia de {ganancia} y una ganancia promedio de {avg}'
 '''
 def peliculas_pais( Pais: str ): Se ingresa un país (como están escritos en el dataset, 
 no hay que traducirlos!), retornando la cantidad de peliculas producidas en el mismo.
@@ -76,13 +67,12 @@ def productoras_exitosas( Productora: str ): Se ingresa la productora,
 entregandote el revunue total y la cantidad de peliculas que realizo.
 Ejemplo de retorno: La productora X ha tenido un revenue de x 
 '''
+@app.get('/productoras/{productora}')
+def productoras_exitosas(productora:str):
+    pr= data[data['pro_comp1'] == productora]
+    ganancia = pr['revenue'].sum()
+    return (f'la productora {productora} tiene {len(pr)} peliculas y una ganancia total de {ganancia}')
 
-@app.get('/productoras_exitosas/{Productora}')
-async def productoras_exitosas(Productora: str):
-    collection = data[data['pro_comp1'] == Productora]
-    num = len(collection)
-    revenue = collection['revenue'].sum()
-    return {'productora':Productora, 'revenue_total': revenue,'cantidad':num}
 
 '''
 def get_director( nombre_director ): Se ingresa el nombre de un director 
