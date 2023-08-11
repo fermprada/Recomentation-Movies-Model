@@ -124,7 +124,12 @@ indices = pd.Series(df.index, index=df['title']).drop_duplicates().to_dict()
 
 @app.get('/recomendacion/{title}')
 def recomendacion(title):
-
+    idx = indices.get(title)
+    
+    if idx is None:
+        return {"error": "Película no encontrada."}
+    
+    score = enumerate(cosine[idx])
     score = sorted(score, key=lambda x: x[1], reverse=True)
     score = score[1:6]
 
