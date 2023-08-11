@@ -118,7 +118,7 @@ def get_director(nombre_director: str):
 # ML
 
 '''Ingresas un nombre de pelicula y te recomienda las similares en una lista'''
-
+'''
 @app.get('/recomendacion/{titulo}')
 def recomendacion(titulo:str):
     
@@ -127,4 +127,4 @@ def recomendacion(titulo:str):
     respuesta = similitud_ordenada.head(5)
 
     return {'lista recomendada': respuesta}
-
+'''
