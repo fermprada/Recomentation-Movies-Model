@@ -108,16 +108,8 @@ def get_director(nombre_director: str):
 # ML
 
 '''Ingresas un nombre de pelicula y te recomienda las similares en una lista'''
-'''
-@app.get('/recomendacion/{titulo}')
-def recomendacion(titulo:str):
-    
-    pelicula = cos_sim_df.loc['titulo']
-    similitud_ordenada = pelicula.sort_values(ascending = False)
-    respuesta = similitud_ordenada.head(5)
 
-    return {'lista recomendada': respuesta}
-'''
+
 data_vec = []
 with open('baseline_vec_df.csv', 'r') as csvfile:
     csvreader = csv.reader(csvfile)
