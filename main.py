@@ -16,7 +16,7 @@ def read_root():
 
 
 data = pd.read_csv('df_f.csv')
-df = pd.read_csv('top1000.csv')
+df = pd.read_csv('df_top.csv')
 
 
 @app.get('/peliculas_idioma/{idioma}')
@@ -110,7 +110,7 @@ def get_director(nombre_director: str):
 
 '''Ingresas un nombre de pelicula y te recomienda las similares en una lista'''
 data_vec = []
-with open('matriz (4).csv', 'r') as csvfile:
+with open('matriz.csv', 'r') as csvfile:
     csvreader = csv.reader(csvfile)
     for row in csvreader:
         data_vec.append(row)
