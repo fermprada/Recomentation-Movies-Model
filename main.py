@@ -118,7 +118,7 @@ with open('baseline_vec_df.csv', 'r') as csvfile:
     for row in csvreader:
         data_vec.append(row)
 
-cosine = np.array(data, dtype=np.float32)
+cosine = np.array(data_vec, dtype=np.float32)
 indices = pd.Series(df.index, index=df['title']).drop_duplicates().to_dict()
 
 @app.get('/recomendacion/{title}')
