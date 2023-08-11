@@ -29,13 +29,22 @@ async def peliculas_idioma(idioma: str):
 def peliculas_duracion( Pelicula: str ): Se ingresa una pelicula. Debe devolver la duracion y el año.
 Ejemplo de retorno: X . Duración: x. Año: xx
 '''
+'''
 @app.get('/peliculas_duracion/{pelicula}')
 async def peliculas_duracion(pelicula):
     d = data[['runtime', 'release_year']][data['title'] == pelicula]
     duracion = int(d['runtime'][1])
     anio = int(d['release_year'][1])
     return {'pelicula':pelicula, 'duracion':f'{duracion}min', 'anio':anio}
+'''
 
+@app.get('/duracion/{pelicula}')
+def peliculas_duracion(pelicula:str):
+    for i, j in enumerate(data['title']):
+        if j == pelicula:
+            return f"Duracion: {data['runtime'][i]} minutos, año: {data['release_year'][i]}"
+        else:
+            continue
 
 '''
 def franquicia( Franquicia: str ): Se ingresa la franquicia, retornando la cantidad de peliculas, 
