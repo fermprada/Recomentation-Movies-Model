@@ -109,14 +109,14 @@ def get_director(nombre_director: str):
 # ML
 
 '''Ingresas un nombre de pelicula y te recomienda las similares en una lista'''
-data = []
+data_vec = []
 with open('matriz (4).csv', 'r') as csvfile:
     csvreader = csv.reader(csvfile)
     for row in csvreader:
-        data.append(row)
+        data_vec.append(row)
 
 # Convierte la lista en un arreglo NumPy
-cosine = np.array(data, dtype=np.float32)
+cosine = np.array(data_vec, dtype=np.float32)
 indices = pd.Series(df.index, index=df['title']).drop_duplicates().to_dict()
 
 @app.get('/recomendacion/{title}')
