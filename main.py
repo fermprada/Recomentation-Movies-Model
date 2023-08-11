@@ -132,7 +132,7 @@ def recomendacion(title):
 
     sim_index = [i[0] for i in score]
     recommended_titles = df['title'].iloc[sim_index].tolist()
-    return {"recommended_movies": recommended_titles}
+    return {"Peliculas recomendadas": recommended_titles}
 
 
 
