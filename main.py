@@ -16,7 +16,7 @@ def read_root():
 data = pd.read_csv('df_f.csv')
 
 
-
+'''
 baseline = data[['title','overview']]
 baseline.dropna(inplace = True)
 tfidfvec = TfidfVectorizer(min_df = 2, max_df = 0.7, token_pattern = r'\b[a-zA-Z]\w+\b',stop_words = 'english')
@@ -25,7 +25,7 @@ baseline_vec_df = pd.DataFrame(baseline_vec.toarray(),index = baseline['title'])
 baseline_vec_df = baseline_vec_df.astype('float16')
 vector_similitud_coseno = cosine_similarity(baseline_vec_df.values)
 cos_sim_df = pd.DataFrame(vector_similitud_coseno, index = baseline_vec_df.index, columns = baseline_vec_df.index)
-
+'''
 
 @app.get('/peliculas_idioma/{idioma}')
 async def peliculas_idioma(idioma: str):
