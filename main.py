@@ -110,15 +110,23 @@ def get_director(nombre_director: str):
 # ML
 
 '''Ingresas un nombre de pelicula y te recomienda las similares en una lista'''
+df = np.array(df).tolist()
+@app.get('/recomendacion/{titulo}')
+async def recomendacion(titulo:str):
+    idx = data.index[data['title'] == titulo].tolist()[0]
+    sim_scores = enumerate(df[idx])
+    sim_scores = sorted(sim_scores, key=lambda x: x[1], reverse=True)
+    sim_scores = sim_scores[1:6]
+    movie_indices = [i[0] for i in sim_scores] 
+    return {'lista recomendada' : list(data['title'].iloc[movie_indices])}
 
-
-data_vec = []
+'''data_vec = []
 with open('baseline_vec_df.csv', 'r') as csvfile:
     csvreader = csv.reader(csvfile)
     for row in csvreader:
         data_vec.append(row)
 
-baseline = df['title','overview']
+baseline = data_vec['title','overview']
 baseline.dropna(inplace = True)
 tfidfvec = TfidfVectorizer(min_df = 2, max_df = 0.7, token_pattern = r'\b[a-zA-Z]\w+\b',stop_words = 'english')
 baseline_vec = tfidfvec.fit_transform(baseline['overview'])
@@ -129,10 +137,10 @@ cos_sim_df = pd.DataFrame(vector_similitud_coseno, index = baseline_vec_df.index
 @app.get('/recomendacion/{title}')
 def recomendacion(title):
 
-    titulo_pelicula = cos_sim_df.loc['title']
+    titulo_pelicula = cos_sim_df.loc[title]
     similitud_ordenada = titulo_pelicula.sort_values(ascending = False)
     similitud_ordenada.head(5)
-
+'''
 '''
 
 cosine = np.array(data_vec, dtype=np.float32)
