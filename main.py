@@ -116,7 +116,7 @@ data_vec = []
 with open('baseline_vec_df.csv', 'r') as csvfile:
     csvreader = csv.reader(csvfile)
     for row in csvreader:
-        data.append(row)
+        data_vec.append(row)
 
 # Convierte la lista en un arreglo NumPy
 cosine = np.array(data_vec, dtype=np.float32)
