@@ -118,12 +118,13 @@ with open('baseline_vec_df.csv', 'r') as csvfile:
     for row in csvreader:
         data_vec.append(row)
 
-# Convierte la lista en un arreglo NumPy
-cosine = np.array(data_vec, dtype=np.float32)
+cosine = np.array(data, dtype=np.float32)
 indices = pd.Series(df.index, index=df['title']).drop_duplicates().to_dict()
 
 @app.get('/recomendacion/{title}')
 def recomendacion(title):
+
+
     idx = indices.get(title)
     
     if idx is None:
@@ -136,3 +137,6 @@ def recomendacion(title):
     sim_index = [i[0] for i in score]
     recommended_titles = df['title'].iloc[sim_index].tolist()
     return {"recommended_movies": recommended_titles}
+
+
+  
