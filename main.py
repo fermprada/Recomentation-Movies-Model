@@ -69,7 +69,7 @@ Ejemplo de retorno: La productora X ha tenido un revenue de x
 '''
 @app.get('/productoras/{productora}')
 def productoras_exitosas(productora:str):
-    pr= data[data['pro_comp1'] == productora]
+    pr= data[data['produc_com1'] == productora]
     ganancia = pr['revenue'].sum()
     return (f'la productora {productora} tiene {len(pr)} peliculas y una ganancia total de {ganancia}')
 
@@ -83,10 +83,10 @@ lanzamiento, retorno individual, costo y ganancia de la misma, en formato lista.
 
 @app.get('/get_director/{nombre_director}')
 def get_director(nombre_director: str):
-    series = data[data['director'] == nombre_director]
+    series = data[data['name'] == nombre_director]
     retorno = series['return'].sum()
     pe= {}
-    pe['director'] = nombre_director
+    pe['name'] = nombre_director
     pe['retorno total'] = retorno
  
     peliculas = []
